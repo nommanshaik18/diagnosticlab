@@ -34,14 +34,16 @@
                 </colgroup>
                 <thead>
                     <tr class="bg-gradient-primary text-light">
-                        <th>#</th>
-                        <th>ID</th>
+                        <!-- <th>#</th> -->
+                        <th>Patient ID</th>
                         <th>Name</th>
                         <th>Gender</th>
                         <th>DOB</th>
                         <th>Address</th>
                         <th>Contact</th>
                         <th>Email</th>
+                        <th>Registered</th>
+                        <th>Updated</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -52,7 +54,7 @@
                     while ($row = $qry->fetch_assoc()):
                         ?>
                         <tr>
-                            <td class="text-center"><?php echo $i++; ?></td>
+                            <!-- <td class="text-center"><?php echo $i++; ?></td> -->
                             <td class=""><?php echo $row['id']; ?></td>
                             <td class=""><?= $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname'] ?></td>
                             <td class=""><?php echo $row['gender']; ?></td>
@@ -60,6 +62,8 @@
                             <td class=""><?php echo $row['address']; ?></td>
                             <td class=""><?php echo $row['contact']; ?></td>
                             <td class=""><?php echo $row['email']; ?></td>
+                            <td class=""><?php echo $row['date_created']; ?></td>
+                            <td class=""><?php echo $row['date_updated']; ?></td>
 
                             <!-- <td class=""><?= $row['firstname'] ?></td>
                             <td class=""><?= $row['middlename'] ?></td>
@@ -109,7 +113,7 @@
 			uni_modal("Appointment Details","appointments/view_appointment.php?id="+$(this).attr('data-id'))
 		})
         $('.edit_data').click(function(){
-			uni_modal("Update Appointment Details","appointments/manage_appointment.php?id="+$(this).attr('data-id'),'mid-large')
+			uni_modal("Update Patient Details","ptregister/patientedit.php?id="+$(this).attr('data-id'),'mid-large')
 		})
 		$('.delete_data').click(function(){
 			_conf("Are you sure to delete this Appointment permanently?","delete_appointment",[$(this).attr('data-id')])

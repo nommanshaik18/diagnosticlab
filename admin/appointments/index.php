@@ -136,6 +136,8 @@
 	})
 	function delete_appointment($id){
 		start_loader();
+		var id =$id
+		console.log("id00,",id)
 		$.ajax({
 			url:_base_url_+"classes/Master.php?f=delete_appointment",
 			method:"POST",

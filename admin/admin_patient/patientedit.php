@@ -218,7 +218,7 @@ if (isset($_GET['id'])) {
                 alert_toast(response.message, 'success');
                 _this[0].reset();
                 setTimeout(function(){
-                location.href = _base_url_ + 'admin/?page=ptregister/allpatient';
+                location.href = _base_url_ + 'admin/?page=admin_patient';
                 } , 1000)
             } else {
                 el.addClass("alert-danger");

@@ -5,6 +5,10 @@
         object-fit:scale-down;
         object-position:center center;
     }
+    .regbtn{
+    justify-content: end;
+    margin-bottom: 10px;
+}
 </style>
 
 
@@ -84,7 +88,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="row align-items-center">
+                <div class="row align-items-center regbtn" >
                     <div class="col-4">
                         <button type="button" onclick="registerPatient()"
                             class="btn btn-primary btn-block btn-flat">Register</button>
@@ -143,6 +147,12 @@
     }
 </script>
  -->
+
+ <script>
+    if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
  <script>
     $(document).ready(function () {
         $('#registration-frm').submit(function (e) {
@@ -173,6 +183,9 @@
 
                     if (response.status === 'success') {
                         alert_toast(response.message, 'success');
+                        setTimeout(function(){
+                location.href = _base_url_ + 'admin/?page=admin_patient';
+                } , 1000)
                         _this[0].reset();
                     } else {
                         el.addClass("alert-danger");

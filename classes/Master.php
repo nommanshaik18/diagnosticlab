@@ -403,6 +403,19 @@ public function save_patient(){
 		}
 		return json_encode($resp);
 	}
+	function delete_patient(){
+		extract($_POST);
+		$del = $this->conn->query("DELETE FROM `patients` WHERE id = '{$id}'");
+		if($del){
+			$resp['status'] = 'success';
+			$this->settings->set_flashdata('success',"Patient has been deleted successfully.");
+		}else{
+			$resp['status'] = 'failed';
+			$resp['error'] = $this->conn->error;
+		}
+		return json_encode($resp);
+	}
+	
 	function save_reservation(){
 		if(empty($_POST['id'])){
 			$prefix = date("Ym")."-";
@@ -574,6 +587,9 @@ switch ($action) {
 	break;
 	case 'delete_appointment':
 		echo $Master->delete_appointment();
+	break;
+	case 'delete_patient':
+		echo $Master->delete_patient();
 	break;
 	case 'update_appointment_status':
 		echo $Master->update_appointment_status();

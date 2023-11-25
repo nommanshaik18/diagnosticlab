@@ -15,7 +15,7 @@
     <div class="card-header">
         <h3 class="card-title">List of Patients</h3>
         <div class="card-tools">
-			<a href="<?php echo base_url ?>admin/?page=ptregister/ptregistration" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>  Add New Patient</a>
+			<a href="<?php echo base_url ?>admin/?page=admin_patient/ptregistration" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>  Add New Patient</a>
 		</div>
     </div>
     
@@ -50,7 +50,9 @@
                 <tbody>
                     <?php
                     $i = 1;
-                    $qry = $conn->query("SELECT * FROM `patients` order by id asc");
+                    // $qry = $conn->query("SELECT * FROM `patients` order by id asc");
+                    $qry = $conn->query("SELECT * FROM `patients` ORDER BY id DESC LIMIT 1");
+
                     while ($row = $qry->fetch_assoc()):
                         ?>
                         <tr>
@@ -113,7 +115,7 @@
 			uni_modal("Appointment Details","appointments/view_appointment.php?id="+$(this).attr('data-id'))
 		})
         $('.edit_data').click(function(){
-			uni_modal("Update Patient Details","ptregister/patientedit.php?id="+$(this).attr('data-id'),'mid-large')
+			uni_modal("Update Patient Details","admin_patient/patientedit.php?id="+$(this).attr('data-id'),'mid-large')
 		})
 		$('.delete_data').click(function(){
 			_conf("Are you sure to delete this Appointment permanently?","delete_appointment",[$(this).attr('data-id')])

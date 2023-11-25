@@ -39,16 +39,16 @@
                         </p>
                       </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a href="<?php echo base_url ?>admin/?page=ptregister" class="nav-link nav-ptregister">
                         <i class="nav-icon fas fa-calendar"></i>
                         <p>
                           New Patient Register
                         </p>
                       </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                      <a href="<?php echo base_url ?>admin/?page=ptregister/allpatient" class="nav-link nav-allpatient">
+                      <a href="<?php echo base_url ?>admin/?page=admin_patient" class="nav-link nav-allpatient">
                         <i class="nav-icon fas fa-calendar"></i>
                         <p>
                           All Patient 

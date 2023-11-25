@@ -8,7 +8,7 @@
 </style>
 <div class="card card-outline card-primary rounded-0 shadow">
 	<div class="card-header">
-		<h3 class="card-title">List of Registered Users</h3>
+		<h3 class="card-title">List of Registered Clinics</h3>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
